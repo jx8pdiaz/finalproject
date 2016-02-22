@@ -29,6 +29,13 @@ class ProfilesController < ApplicationController
 		end
 	end
 
+	def delete
+		Profile.find(params[:id]).destroy
+		flash[:success] = "User destroyed"
+		redirect_to users_url
+	end
+
+
 	private
 	
 	def profile_params
