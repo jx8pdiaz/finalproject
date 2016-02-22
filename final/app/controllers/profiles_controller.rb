@@ -1,6 +1,7 @@
 class ProfilesController < ApplicationController
+	before_action :set_profile
 	def show
-		id = params[:id]
+		# id = params[:id]
 	end
 
 	def new
@@ -17,11 +18,23 @@ class ProfilesController < ApplicationController
 		end
 	end
 
+	def edit
+		# id = params[:id]
+	end
+
 	def update
-		@profile = Profile.update(id: params[:id])
+		if @profile.update_attributes(profile_params)
+		else
+			render 'edit'
+		end
 	end
 
 	private
+	
+	def profile_params
+		params.require(:profile).permit(:name, :headshot_url, :bio)
+	end
+
 	def set_profile
 		@profile = Profile.find_by(id: params[:id])
 	end
