@@ -16,8 +16,12 @@ class ProfilesController < ApplicationController
 		end
 	end
 
+	def update
+		@profile = @user.profiles.update
+	end
+
 	private
-	def profile_params
+	def set_profile
 		@profile = Profile.find_by(id: params[:id])
 	end
 end
