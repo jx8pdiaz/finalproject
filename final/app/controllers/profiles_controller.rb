@@ -5,6 +5,7 @@ class ProfilesController < ApplicationController
 
 	def new
 		@profile = @user.profiles.new
+	end
 
 	def create
 		@profile = @user.profiles.new
@@ -17,7 +18,7 @@ class ProfilesController < ApplicationController
 	end
 
 	def update
-		@profile = @user.profiles.update
+		@profile = Profile.update(id: params[:id])
 	end
 
 	private
