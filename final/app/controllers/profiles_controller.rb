@@ -9,9 +9,9 @@ class ProfilesController < ApplicationController
 	end
 
 	def create
-		@profile = @user.profiles.new
+		@profile = @user.profiles.new(profile_params)
 		if @profile.save
-			redirect_to(user_profile_path(@user))
+			redirect_touser_profile_path(@user)
 		else
 			flash.now[:error] = @profile.errors.full_messages
 			render 'new'
