@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
 	before_action :set_profile
+	
 	def new
 		@comment = @profile.comments.new
 	end
