@@ -2,6 +2,9 @@ class ItemsController < ApplicationController
 	before_action :set_profile
 	before_save :set_default
 	
+	def show
+	end
+
 	def new
 		@item = @profile.items.new
 	end
