@@ -1,12 +1,14 @@
 class ItemsController < ApplicationController
 	before_action :set_profile
+	before_save :set_default
 	
 	def new
 		@item = @profile.items.new
 	end
 
 	def create
-		@item = @profile.items.new(item_params)
+		@profile=Profile.find_by(id: params[:profile_id])
+		@item = @profile.items.create(item_params)
 		if @item.save
 			redirect_to profile_items_path(@profile)
 		else
@@ -19,6 +21,13 @@ class ItemsController < ApplicationController
 
 	def set_profile
 		@profile = Profile.find_by(id: params[:id])
+	end
+
+	def set_default
+		self.pic_url = "default" unless self.pic_url
+		self.download_url = "default" unless self.download_url
+		self.isForSale = "false" unless self.isForSale
+		self.price = "0.0" unless self.price
 	end
 
 	def item_params
