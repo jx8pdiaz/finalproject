@@ -16,6 +16,12 @@ class CommentsController < ApplicationController
 		end
 	end
 
+	def delete
+		Comment.find(params[:id]).destroy
+		flash[:success] = "item destroyed"
+		redirect_to comments_url
+	end
+
 	private
 
 	def set_profile
