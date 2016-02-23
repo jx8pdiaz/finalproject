@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
 	before_action :set_profile
 	before_save :set_default
+	before_action :authenticate_user!, only: :edit
 	
 	def show
 	end
@@ -17,6 +18,16 @@ class ItemsController < ApplicationController
 		else
 			flash.now[:error] = @item.errors.full_messages
 			render 'new'
+		end
+	end
+
+	def edit
+	end
+
+	def update
+		if @item.update_attributes(item_params)
+		else
+			render 'edit'
 		end
 	end
 
