@@ -21,3 +21,7 @@ puts delia.errors.full_messages
 rick.items.create([{name: 'JX8P', description: 'Synthesizer'}, {name: 'Mother-32', description: 'Synthesizer'}])
 richard.items.create([{name: 'ARP Odyssey', description: 'Synthesizer'}, {name: 'Volca Beats', description: 'Synthesizer'}])
 jean.items.create([{name: 'King Korg', description: 'Synthesizer'}, {name: 'Elektron', description: 'Synthesizer'}])
+
+i_types = ItemType.create([
+	{"Equipment"}, {"Patch"}, {"Video"}, {"Audio"}
+	])
