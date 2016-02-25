@@ -8,7 +8,7 @@ Rails.application.routes.draw do
  end
 
   resources :items do
-    resources :comments
+    resources :comments, :item_types
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
