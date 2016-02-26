@@ -1,6 +1,6 @@
 class ProfilesController < ApplicationController
 	before_action :set_profile
-	before_save  :set_default
+	# after_initialize  :set_default
 	def show
 		# id = params[:id]
 	end
@@ -43,10 +43,10 @@ class ProfilesController < ApplicationController
 		params.require(:profile).permit(:name, :headshot_url, :bio)
 	end
 
-	def set_default
-		self.headshot_url = "default" unless self.headshot_url
-		self.bio = "Great Guy" unless self.bio
-	end
+	# def set_default
+	# 	self.headshot_url = "default" unless self.headshot_url
+	# 	self.bio = "Great Guy" unless self.bio
+	# end
 
 	def set_profile
 		@profile = Profile.find_by(id: params[:id])

@@ -23,5 +23,5 @@ richard.items.create([{name: 'ARP Odyssey', description: 'Synthesizer'}, {name: 
 jean.items.create([{name: 'King Korg', description: 'Synthesizer'}, {name: 'Elektron', description: 'Synthesizer'}])
 
 i_types = ItemType.create([
-	{"Equipment"}, {"Patch"}, {"Video"}, {"Audio"}
+	{kind: "Equipment"}, {kind: "Patch"}, {kind: "Video"}, {kind: "Audio"}
 	])
