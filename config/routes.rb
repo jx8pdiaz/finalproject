@@ -3,6 +3,8 @@ Rails.application.routes.draw do
     sessions: 'users/sessions'
   }
 
+  get "/" => "home#home"
+
   resources :profiles do
    resources :items, :comments
  end
