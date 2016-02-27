@@ -1,42 +1,27 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
 User.create!([
-  {email: "rick@gmail.com", password: "password"},
-  {email: "richard@gmail.com", password: "password"},
-  {email: "jean@gmail.com", password: "password"},
-  {email: "delia@gmail.com", password: "password"}
+  {email: "richard@gmail.com", password: "password" , reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 0, current_sign_in_at: nil, last_sign_in_at: nil, current_sign_in_ip: nil, last_sign_in_ip: nil},
+  {email: "jean@gmail.com", password: "password" , reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 0, current_sign_in_at: nil, last_sign_in_at: nil, current_sign_in_ip: nil, last_sign_in_ip: nil},
+  {email: "kaykayyali@gmail.com", password: "password" , reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 0, current_sign_in_at: nil, last_sign_in_at: nil, current_sign_in_ip: nil, last_sign_in_ip: nil},
+  {email: "delia@gmail.com", password: "password" , reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 1, current_sign_in_at: "2016-02-27 19:55:36", last_sign_in_at: "2016-02-27 19:55:36", current_sign_in_ip: "::1", last_sign_in_ip: "::1"},
+  {email: "rick@gmail.com", password: "password" , reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 2, current_sign_in_at: "2016-02-27 20:08:37", last_sign_in_at: "2016-02-27 18:45:44", current_sign_in_ip: "::1", last_sign_in_ip: "::1"}
 ])
-rick, richard, jean, delia = Profile.create([
-	{name: "Rick", bio: "This guy", :user_id => 1},
-	{name: "Richard", bio: "Another guy", :user_id => 2},
-	{name: "Jean", bio: "Another guy", :user_id => 3},
-	{name: "Delia", bio: "Another guy", :user_id => 4}
-	])
-
-puts rick.errors.full_messages
-puts richard.errors.full_messages
-puts jean.errors.full_messages
-puts delia.errors.full_messages
-
-rick.items.create([{name: 'JX8P', description: 'Synthesizer',item_type_id: 3}, {name: 'Mother-32', description: 'Synthesizer',item_type_id: 3}])
-richard.items.create([{name: 'ARP Odyssey', description: 'Synthesizer',item_type_id: 3}, {name: 'Volca Beats', description: 'Synthesizer',item_type_id: 3}])
-jean.items.create([{name: 'King Korg', description: 'Synthesizer',item_type_id: 3}, {name: 'Elektron', description: 'Synthesizer',item_type_id: 3}])
-
-# i_types = ItemType.create([
-# 	{kind: "Equipment"}, {kind: "Patch"}, {kind: "Video"}, {kind: "Audio"}
-# 	])
-
-User.create!([
-  {email: "kaykayyali@gmail.com", password: "password"}
+Comment.create!([
+  {body: "darg", subject: "", profile_id: 4, item_id: 14},
+  {body: "aegr", subject: "set", profile_id: 4, item_id: 14},
+  {body: "ahah", subject: "alala", profile_id: 1, item_id: 14}
 ])
 Item.create!([
-  {name: "item1", description: nil, pic_url: "default", download_url: "default", isForSale: false, price: "0.0", item_type_id: 1, profile_id: 5},
-  {name: "Item2", description: nil, pic_url: "default", download_url: "default", isForSale: false, price: "0.0", item_type_id: 2, profile_id: 5}
+  {name: "JX8P", description: "Synthesizer", pic_url: "default", download_url: "default", isForSale: false, price: "0.0", item_type_id: 3, profile_id: 1, audiofile: nil, videofile: nil, itempicture: nil},
+  {name: "Mother-32", description: "Synthesizer", pic_url: "default", download_url: "default", isForSale: false, price: "0.0", item_type_id: 3, profile_id: 1, audiofile: nil, videofile: nil, itempicture: nil},
+  {name: "ARP Odyssey", description: "Synthesizer", pic_url: "default", download_url: "default", isForSale: false, price: "0.0", item_type_id: 3, profile_id: 2, audiofile: nil, videofile: nil, itempicture: nil},
+  {name: "Volca Beats", description: "Synthesizer", pic_url: "default", download_url: "default", isForSale: false, price: "0.0", item_type_id: 3, profile_id: 2, audiofile: nil, videofile: nil, itempicture: nil},
+  {name: "King Korg", description: "Synthesizer", pic_url: "default", download_url: "default", isForSale: false, price: "0.0", item_type_id: 3, profile_id: 3, audiofile: nil, videofile: nil, itempicture: nil},
+  {name: "Elektron", description: "Synthesizer", pic_url: "default", download_url: "default", isForSale: false, price: "0.0", item_type_id: 3, profile_id: 3, audiofile: nil, videofile: nil, itempicture: nil},
+  {name: "item1", description: nil, pic_url: "default", download_url: "default", isForSale: false, price: "0.0", item_type_id: 1, profile_id: 5, audiofile: nil, videofile: nil, itempicture: nil},
+  {name: "Item2", description: nil, pic_url: "default", download_url: "default", isForSale: false, price: "0.0", item_type_id: 2, profile_id: 5, audiofile: nil, videofile: nil, itempicture: nil},
+  {name: "NEW AUDIO STREAM", description: "", pic_url: "default", download_url: "default", isForSale: false, price: "0.0", item_type_id: 1, profile_id: 1, audiofile: nil, videofile: nil, itempicture: nil},
+  {name: "jtrd", description: "", pic_url: "default", download_url: "default", isForSale: false, price: "0.0", item_type_id: 2, profile_id: 1, audiofile: nil, videofile: nil, itempicture: nil},
+  {name: "VIDEO 1", description: "", pic_url: "default", download_url: "default", isForSale: false, price: "0.0", item_type_id: 2, profile_id: 1, audiofile: nil, videofile: nil, itempicture: nil}
 ])
 ItemType.create!([
   {kind: "Audio"},
@@ -45,13 +30,42 @@ ItemType.create!([
   {kind: "Patch"}
 ])
 Profile.create!([
+  {name: "Rick", headshot_url: "default", bio: "This guy", user_id: 1},
+  {name: "Richard", headshot_url: "default", bio: "Another guy", user_id: 2},
+  {name: "Jean", headshot_url: "default", bio: "Another guy", user_id: 3},
+  {name: "Delia", headshot_url: "default", bio: "Another guy", user_id: 4},
   {name: "Kaysser", headshot_url: "default", bio: "Great Guy", user_id: 1}
 ])
 Tag.create!([
-  {item_id: 2, tagtype_id: 1},
-  {item_id: 2, tagtype_id: 2}
+  {item_id: 14, tag_type_id: 1},
+  {item_id: 14, tag_type_id: 1},
+  {item_id: 14, tag_type_id: 1},
+  {item_id: 14, tag_type_id: 1},
+  {item_id: 14, tag_type_id: 1},
+  {item_id: 14, tag_type_id: 1},
+  {item_id: 14, tag_type_id: 1},
+  {item_id: 14, tag_type_id: 1},
+  {item_id: 14, tag_type_id: 1},
+  {item_id: 14, tag_type_id: 1},
+  {item_id: 14, tag_type_id: 2},
+  {item_id: 14, tag_type_id: 2},
+  {item_id: 14, tag_type_id: 2},
+  {item_id: 14, tag_type_id: 1},
+  {item_id: 14, tag_type_id: 1},
+  {item_id: 14, tag_type_id: 1},
+  {item_id: 14, tag_type_id: 1},
+  {item_id: 14, tag_type_id: 1},
+  {item_id: 14, tag_type_id: 1},
+  {item_id: 14, tag_type_id: 1},
+  {item_id: 14, tag_type_id: 1},
+  {item_id: 14, tag_type_id: 1},
+  {item_id: 14, tag_type_id: 1},
+  {item_id: 14, tag_type_id: 1},
+  {item_id: 14, tag_type_id: 1}
 ])
 TagType.create!([
   {description: "WOWZER"},
-  {description: "Groovy"}
+  {description: "Groovy"},
+  {description: "Spacey"},
+  {description: "Hip"}
 ])
