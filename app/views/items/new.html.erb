@@ -1,0 +1,25 @@
+<ul>
+  <% if flash[:error] %>
+		<% flash[:error].each do | error | %>
+			<li>
+				<%= error  %>
+			</li>
+		<% end %>
+	<% end %>
+</ul>
+
+
+<%= form_for [@profile, @item] do | f | %>
+<%= f.label :name %><br>
+<%= f.text_field :name %><br>
+
+<%= f.label :description %><br>
+<%= f.text_field :description %><br>
+
+<%= f.check_box_tag(:isForSale) %><br>
+<%= label_tag(:isForSale, "Item is for sale") %><br>
+
+<%= f.label :price %><br>
+<%= f.number_field :price %><br>
+<%= f.submit %>
+<% end %>
