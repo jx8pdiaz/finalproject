@@ -7,6 +7,19 @@ class ItemsController < ApplicationController
 		@item = Item.find_by_id(params[:id])
 		@comments = @item.comments
 		@newcomment = Comment.new
+		@tag = Tag.new
+		@tags = @item.tags
+		@data_hash = {}
+		TagType.all.each do |tagtype|
+			@data_hash[tagtype.description] = {id: tagtype.id, name: tagtype.description,  count: 0}
+		end
+		@tags.each do |tag|
+			@data_hash[TagType.find_by(id: tag.tag_type_id).description][:count] += 1 
+		end
+
+
+
+
 		if @item.item_type.kind == "Video"
 		 	 render 'show_video'
 		elsif @item.item_type.kind == "Audio"

@@ -8,10 +8,12 @@
 </head>
 <body>
 <% if current_user %>
-<%= link_to "Sign Out", :destroy_user_session , :method => :delete %>
-<br>
-<%= link_to "Back", :back%>
-<br>
+<ul class="list-inline">
+	<li><%= link_to "Sign Out", :destroy_user_session , :method => :delete %></li>
+	<li><%= link_to "Back", :back%></li>
+	<li><%= link_to "Profile", profile_path(current_user.profile.id) %></li>
+</ul>
+<hr>
 <% end %>
 <%= yield %>
 

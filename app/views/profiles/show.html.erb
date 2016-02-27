@@ -11,7 +11,7 @@
 	<br>
 	<%= link_to "New Item", :new_item %>
 	<h3>MY ITEMS</h3>
-	<ul>
+	<ul class="list-unstyled">
 		<% @my_items.each do |i| %>
 			<li>
 				<%= link_to i.name, item_path(i.id) %>
@@ -21,7 +21,7 @@
 				<% end %>
 	</ul>
 	<h4>NEARBY ITEMS</h4>
-	<ul>
+	<ul class="list-unstyled">
 		<% @items.each do |i| %>
 			<li>
 				<%= link_to i.name, item_path(i.id) %>
