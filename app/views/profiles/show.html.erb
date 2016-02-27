@@ -6,12 +6,27 @@
 </head>
 <body>
 	<%= @profile.name %>
+	<br>
 	<%= @profile.bio %>
+	<br>
+	<%= link_to "New Item", :new_item %>
+	<h3>MY ITEMS</h3>
 	<ul>
-		<%= @items.each do |i| %>
+		<% @my_items.each do |i| %>
 			<li>
-				<%= i.title %>
+				<%= link_to i.name, item_path(i.id) %>
 				<%= i.description %>
+				<%= i.item_type.kind %>
+				</li>
+				<% end %>
+	</ul>
+	<h4>NEARBY ITEMS</h4>
+	<ul>
+		<% @items.each do |i| %>
+			<li>
+				<%= link_to i.name, item_path(i.id) %>
+				<%= i.description %>
+				<%= i.item_type.kind %>
 				</li>
 				<% end %>
 	</ul>

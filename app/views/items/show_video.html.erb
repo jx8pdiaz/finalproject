@@ -5,9 +5,12 @@
 	<title>Video</title>
 </head>
 <body>
+SHOWING Video
 	<%= @item.name %>
 	<%= @item.description %>
-	<%= @item.isForSale %>
-	<%= @item.price %>
+	<%= @item.download_url%>
+	<% if  @item.videofile %>
+		<video src="<%= @item.videofile_url %>" alt="" style="width: 200px;">
+	<% end %>
 </body>
 </html>

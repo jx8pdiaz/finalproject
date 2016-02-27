@@ -2,6 +2,7 @@
 Welcome
 <p>New User? Sign up
 <a href="/users/sign_up">here</a></p>
-<a href="/profiles/:profile_id/items">View Your Synthesizers</a>
-<a href="/profiles/:profile_id/items/new">Add a Synthesizer</a>
-        
+<% if @profile %>
+	<a href="/profiles/<%= @profile %>/items">View Your Synthesizers</a>
+	<a href="/profiles/<%= @profile %>/items/new">Add a Synthesizer</a>
+<% end %>

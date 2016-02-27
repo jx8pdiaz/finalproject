@@ -6,10 +6,11 @@ class CommentsController < ApplicationController
 	end
 
 	def create
-		@profile=Profile.find_by(id: params[:profile_id])
-		@comment = @profile.comments.create(comment_params)
+		@profile= current_user.profile
+		@comment = @profile.comments.new(comment_params)
+		@comment.item_id = params[:item_id]
 		if @comment.save
-			redirect_to profile_comments_path(@profile)
+			redirect_to(request.referrer)
 		else
 			flash.now[:error] = @comment.errors.full_messages
 			render 'new'
@@ -25,11 +26,11 @@ class CommentsController < ApplicationController
 	private
 
 	def set_profile
-		@profile = Profile.find_by(id: params[:id])
+		@profile = current_user.profile
 	end
 
 	def comment_params
-		params.require(:comment).permit(:body, :subject)
+		params.require(:comment).permit(:body, :subject, :item_id)
 	end
 
 end

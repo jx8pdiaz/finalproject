@@ -2,17 +2,20 @@ class ProfilesController < ApplicationController
 	before_action :set_profile
 	# after_initialize  :set_default
 	def show
+		@my_items = @profile.items
+		@items = Item.all.select {|item| item.profile.id != current_user.profile.id }
 		# id = params[:id]
 	end
 
 	def new
-		@profile = @user.profiles.new
+		@profile = Profile.new
 	end
 
 	def create
-		@profile = @user.profiles.new(profile_params)
+		@profile = Profile.new(profile_params)
+		@profile.user_id = current_user.id
 		if @profile.save
-			redirect_to user_profile_path(@user)
+			redirect_to(profile_path(current_user.profile.id))
 		else
 			flash.now[:error] = @profile.errors.full_messages
 			render 'new'
@@ -25,6 +28,7 @@ class ProfilesController < ApplicationController
 
 	def update
 		if @profile.update_attributes(profile_params)
+			redirect_to(profile_path(current_user.profile.id))
 		else
 			render 'edit'
 		end

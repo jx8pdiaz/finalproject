@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160226210532) do
+ActiveRecord::Schema.define(version: 20160227192719) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,7 +22,10 @@ ActiveRecord::Schema.define(version: 20160226210532) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "profile_id"
+    t.integer  "item_id"
   end
+
+  add_index "comments", ["item_id"], name: "index_comments_on_item_id", using: :btree
 
   create_table "item_types", force: :cascade do |t|
     t.string   "kind"
@@ -39,8 +42,11 @@ ActiveRecord::Schema.define(version: 20160226210532) do
     t.decimal  "price",        default: 0.0
     t.datetime "created_at",                       null: false
     t.datetime "updated_at",                       null: false
-    t.integer  "itemtype_id"
+    t.integer  "item_type_id"
     t.integer  "profile_id"
+    t.string   "audiofile"
+    t.string   "videofile"
+    t.string   "itempicture"
   end
 
   create_table "profiles", force: :cascade do |t|

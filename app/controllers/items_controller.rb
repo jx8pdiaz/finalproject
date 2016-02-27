@@ -4,13 +4,16 @@ class ItemsController < ApplicationController
 	before_action :authenticate_user!, only: :edit
 	
 	def show
-		if Item.find_by_id(params[:item_id]).itemtype_id.kind == "Video"
+		@item = Item.find_by_id(params[:id])
+		@comments = @item.comments
+		@newcomment = Comment.new
+		if @item.item_type.kind == "Video"
 		 	 render 'show_video'
-		elsif Item.find_by_id(params[:item_id]).item_type.kind == "Audio"
+		elsif @item.item_type.kind == "Audio"
 			 render 'show_audio'
-		elsif Item.find_by_id(params[:item_id]).item_type.kind == "Equipment"
+		elsif @item.item_type.kind == "Equipment"
 			 render 'show_equipment'
-		else Item.find_by_id(params[:item_id]).item_type.kind == "Patch"
+		else @item.item_type.kind == "Patch"
 			 render 'show_patch'
 		end
 	end
@@ -21,9 +24,10 @@ class ItemsController < ApplicationController
 
 	def create
 		@profile=Profile.find_by(id: params[:profile_id])
+		p item_params
 		@item = @profile.items.create(item_params)
 		if @item.save
-			redirect_to profile_items_path(@profile)
+			redirect_to profile_path(current_user.profile.id)
 		else
 			flash.now[:error] = @item.errors.full_messages
 			render 'new'
@@ -50,7 +54,7 @@ class ItemsController < ApplicationController
 	private
 
 	def set_profile
-		@profile = Profile.find_by(id: params[:id])
+		@profile = current_user.profile
 	end
 
 	# def set_default
@@ -61,6 +65,6 @@ class ItemsController < ApplicationController
 	# end
 
 	def item_params
-		params.require(:item).permit(:name, :description, :pic_url, :download_url, :isForSale, :price)
+		params.require(:item).permit(:name, :description, :pic_url, :download_url, :isForSale, :price, :item_type_id, :audiofile, :videofile, :itempicture)
 	end
 end
