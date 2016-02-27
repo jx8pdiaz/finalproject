@@ -4,10 +4,14 @@ class ItemsController < ApplicationController
 	before_action :authenticate_user!, only: :edit
 	
 	def show
-		if Item.find_by_id(params[:item_id]).item_types.kind == "Video" render('show_video')
-		elsif Item.find_by_id(params[:item_id]).item_types.kind == "Audio" render('show_audio')
-		elsif Item.find_by_id(params[:item_id]).item_types.kind == "Equipment" render('show_equipment')
-		else Item.find_by_id(params[:item_id]).item_types.kind == "Patch" render('show_patch')
+		if Item.find_by_id(params[:item_id]).itemtype_id.kind == "Video"
+		 	 render 'show_video'
+		elsif Item.find_by_id(params[:item_id]).item_type.kind == "Audio"
+			 render 'show_audio'
+		elsif Item.find_by_id(params[:item_id]).item_type.kind == "Equipment"
+			 render 'show_equipment'
+		else Item.find_by_id(params[:item_id]).item_type.kind == "Patch"
+			 render 'show_patch'
 		end
 	end
 
