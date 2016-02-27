@@ -5,6 +5,15 @@
 	<title>Show</title>
 </head>
 <body>
-	
+	<%= @profile.name %>
+	<%= @profile.bio %>
+	<ul>
+		<%= @items.each do |i| %>
+			<li>
+				<%= i.title %>
+				<%= i.description %>
+				</li>
+				<% end %>
+	</ul>
 </body>
 </html>
