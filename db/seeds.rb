@@ -30,11 +30,11 @@ ItemType.create!([
   {kind: "Patch"}
 ])
 Profile.create!([
-  {name: "Rick", headshot_url: "default", bio: "This guy", user_id: 1},
-  {name: "Richard", headshot_url: "default", bio: "Another guy", user_id: 2},
-  {name: "Jean", headshot_url: "default", bio: "Another guy", user_id: 3},
+  {name: "Rick", headshot_url: "default", bio: "This guy", user_id: 5},
+  {name: "Richard", headshot_url: "default", bio: "Another guy", user_id: 1},
+  {name: "Jean", headshot_url: "default", bio: "Another guy", user_id: 2},
   {name: "Delia", headshot_url: "default", bio: "Another guy", user_id: 4},
-  {name: "Kaysser", headshot_url: "default", bio: "Great Guy", user_id: 1}
+  {name: "Kaysser", headshot_url: "default", bio: "Great Guy", user_id: 3}
 ])
 Tag.create!([
   {item_id: 14, tag_type_id: 1},
