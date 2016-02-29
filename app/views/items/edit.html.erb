@@ -1,0 +1,37 @@
+<ul>
+  <% if flash[:error] %>
+		<% flash[:error].each do | error | %>
+			<li>
+				<%= error  %>
+			</li>
+		<% end %>
+	<% end %>
+</ul>
+
+
+<%= form_for [@profile, @item] do | f | %>
+<%= f.label :name %><br>
+<%= f.text_field :name %><br>
+
+<%= f.label :description %><br>
+<%= f.text_field :description %><br>
+
+<%= f.label :itempicture %><br>
+<%= f.file_field :itempicture %><br>
+
+<%= f.check_box(:isForSale) %><br>
+<%= label_tag(:isForSale, "Item is for sale") %><br>
+
+<%= f.label :item_type %><br>
+<%= f.select :item_type_id, options_from_collection_for_select(ItemType.all, 'id', 'kind') %><br>
+
+<%= f.label :audiofile %><br>
+<%= f.file_field :audiofile %><br>
+
+<%= f.label :videofile %><br>
+<%= f.file_field :videofile %><br>
+
+<%= f.label :price %><br>
+<%= f.number_field :price %><br>
+<%= f.submit %>
+<% end %>
