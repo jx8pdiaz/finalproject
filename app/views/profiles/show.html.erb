@@ -5,33 +5,51 @@
 	<title>Show</title>
 </head>
 <body>
-	<%= @profile.name %>
-	<br>
-	<%= @profile.bio %>
-	<br>
-	<img src="<%= @profile.profilepicture_url %>" style="width: 200px;">
-	<%= link_to "Edit Profile", :edit_profile, class: "btn btn-block btn-xs btn-primary" %>
-	<span class="glyphicon glyphicon-user"></span></a>
-	<%= link_to "New Item", :new_item %>
-	<h3>MY ITEMS</h3>
-	<ul class="list-unstyled">
+<div class="container fluid">
+	<div class="row">
+		<div class="col-xs-9">
+		<h4>NEARBY ITEMS</h4>
+		<ul class="list-unstyled">
+		<% @items.each do |i| %>
+			<li>
+				<%= link_to i.name, item_path(i.id) %><br>
+				<img src="<%= i.itempicture_url %>" style="width: 200px;"><br>
+				<%= i.description %>
+				<%= i.item_type.kind %>
+				</li>
+				<% end %>
+		</ul>
+		</div>
+		<div class="col-xs-3">
+		<img src="<%= @profile.profilepicture_url %>" style="width: 200px;">
+		<br>
+		<span><i class="fa fa-user"><h4><%= @profile.name %></h4></i></span> 
+		<h6><%= @profile.location %></h6>
+		<br>
+		<%= @profile.bio %>
+
+		<br>
+		<%= link_to "Edit Profile", :edit_profile, class: "btn btn-block btn-xs btn-primary" %>
+		<span class="glyphicon glyphicon-user"></span></a>
+		
+		<h3>MY ITEMS</h3>
+		<ul class="list-unstyled">
 		<% @my_items.each do |i| %>
 			<li>
 				<%= link_to i.name, item_path(i.id) %>
+				<br>
+
 				<%= i.description %>
 				<%= i.item_type.kind %>
 				</li>
 				<% end %>
-	</ul>
-	<h4>NEARBY ITEMS</h4>
-	<ul class="list-unstyled">
-		<% @items.each do |i| %>
-			<li>
-				<%= link_to i.name, item_path(i.id) %>
-				<%= i.description %>
-				<%= i.item_type.kind %>
-				</li>
-				<% end %>
-	</ul>
+		</ul>
+		<%= link_to "New Item", :new_item, class: "btn btn-block btn-xs btn-warning" %>
+		</div>		
+	</div>
+</div>
+	
+	
+	
 </body>
 </html>
