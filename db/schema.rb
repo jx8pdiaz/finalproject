@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160227203042) do
+ActiveRecord::Schema.define(version: 20160301001238) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,11 +51,12 @@ ActiveRecord::Schema.define(version: 20160227203042) do
 
   create_table "profiles", force: :cascade do |t|
     t.string   "name"
-    t.string   "headshot_url", default: "default"
-    t.string   "bio",          default: "Great Guy"
+    t.string   "headshot_url",   default: "default"
+    t.string   "bio",            default: "Great Guy"
     t.integer  "user_id"
-    t.datetime "created_at",                         null: false
-    t.datetime "updated_at",                         null: false
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
+    t.string   "profilepicture"
   end
 
   create_table "tag_types", force: :cascade do |t|

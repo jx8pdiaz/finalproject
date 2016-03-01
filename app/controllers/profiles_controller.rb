@@ -44,7 +44,7 @@ class ProfilesController < ApplicationController
 	private
 	
 	def profile_params
-		params.require(:profile).permit(:name, :headshot_url, :bio)
+		params.require(:profile).permit(:name, :headshot_url, :bio, :profilepicture)
 	end
 
 	# def set_default
