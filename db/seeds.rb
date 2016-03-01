@@ -64,8 +64,24 @@ Tag.create!([
   {item_id: 14, tag_type_id: 1}
 ])
 TagType.create!([
+  {description: "Polyphonic"},
+  {description: "Monophonic"},
+  {description: "Digital"},
+  {description: "Analogue"},
+  {description: "Pads"},
+  {description: "Strings"},
+  {description: "Bass"},
+  {description: "Drums"},
+  {description: "Arp"},
+  {description: "Sequencer"},
+  {description: "Portamento"},
   {description: "WOWZER"},
   {description: "Groovy"},
   {description: "Spacey"},
-  {description: "Hip"}
+  {description: "Hip"},
+  {description: "Dark"},
+  {description: "Shimmering"},
+  {description: "Resonant"}
+
+
 ])
