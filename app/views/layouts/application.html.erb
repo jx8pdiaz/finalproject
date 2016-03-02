@@ -11,7 +11,7 @@
 <ul class="list-inline nav-top">
 	<li><%= link_to "Sign Out", :destroy_user_session , :method => :delete %></li>
 	<li><%= link_to "Back", :back%></li>
-	<li><%= link_to "Profile", profile_path(current_user.profile.id) %></li>
+	<li><%= link_to "Profile", profile_path(current_user) %></li>
 </ul>
 <hr>
 <% end %>

@@ -15,7 +15,7 @@ class ProfilesController < ApplicationController
 		@profile = Profile.new(profile_params)
 		@profile.user_id = current_user.id
 		if @profile.save
-			redirect_to(profile_path(current_user.profile.id))
+			redirect_to(profile_path(current_user))
 		else
 			flash.now[:error] = @profile.errors.full_messages
 			render 'new'
