@@ -5,58 +5,67 @@
 	<title>Equipment</title>
 </head>
 <body>
-	<div class="container">
-		<%= @item.name %>
-		<%= @item.description %>
-		<%= @item.isForSale %>
-		<%= @item.price %>
-		<br>
-		<img src="<%= @item.itempicture_url %>" alt="" style="width: 500px;">
-		<br>
-		<% if current_user %>
-		<%= link_to "Edit Item", :edit_item, class: "btn btn-lg btn-info" %>
-		<% end %>
-		<ul>
-			<div class="row">
-			<div class="col-xs-6">
-			<h4> Comments: </h4>
+	<div class="container-fluid bg-grey">
+		<div class="row">
+			<div class="col-sm-2">
+			</div>
+			<div class="col-sm-7 item-col">
+			<i class="fa fa-cubes fa-5x item-header"></i>
+			<h1 class="item-header"><%= @item.name %></h1>
 			<br>
-			<% @comments.each do |c| %>
-				<li>
-				<% p c%>
+			<%= @item.description %>
+			<br>
+			<%= @item.isForSale %>
+			<%= @item.price %>
+			<br>
+			<img src="<%= @item.itempicture_url %>" alt="" style="width: 500px;" class="img-rounded">
+			<br>
+			<% if current_user %>
+			<%= link_to "Edit Item", :edit_item, class: "btn btn-lg btn-info" %>
+			<% end %>
+				<div class="row">
+				<h4> Comments: </h4>
+				<ul>
+				<% @comments.each do |c| %>
+					<li>
+					<% p c%>
 					User: <%= c.profile.name %><br>
 					Subject: <%= c.subject %>
 					<br>
 					Body: <%= c.body %>
-				</li>
-			<% end %>
-		</ul>
-		
-			<%= form_for [@item, @newcomment] do | comment |%>
-				<%= comment.label :body %><br>
-				<%= comment.text_field :body %><br>
-				<%= comment.label :subject %><br>
-				<%= comment.text_field :subject %><br>
-				<%= comment.submit %>
-			<% end %>
-		</div>
-		<div class="col-xs-6">
+					</li>
+				<% end %>
+				</ul>
+				<span class="comment-form">
+				<%= form_for [@item, @newcomment] do | comment |%>
+					<%= comment.label :body %><br>
+					<%= comment.text_field :body %><br>
+					<%= comment.label :subject %><br>
+					<%= comment.text_field :subject %><br>
+					<%= comment.submit %>
+				<% end %>
+				</span>
+				</div>
+			</div>
+		<div class="col-xs-3 tag-col">
 			<h4>Tags:</h4>
-		<ul>
+			<ul>
 			<% @data_hash.each do |data| %>
 				<li>
 					Tag Type <%= data[1][:name] %><br>
 					Tag Count <%= data[1][:count] %>
 				</li>
 			<% end %>
-		</ul>
-			<%= form_for [@item, @tag] do | comment |%>
-				<%= comment.label :tag %><br>
-				<%= comment.select :tag_type_id, options_from_collection_for_select(TagType.all, 'id', 'description') %><br>
-				<%= comment.submit %>
+			</ul>
+			<%= form_for [@item, @tag] do | t |%>
+				<%= t.label :tag %>
+				<br>
+				<%= t.select :tag_type_id, options_from_collection_for_select(TagType.all, 'id', 'description') %>
+				<br>
+				<%= t.submit %>
 			<% end %>
+			</div>
 		</div>
-	</div>
 	</div>	
 </body>
 </html>

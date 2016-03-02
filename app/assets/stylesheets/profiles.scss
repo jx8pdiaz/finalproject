@@ -7,6 +7,7 @@
 	height: 60px
 }
 .navname {
+	margin-top: 20px;
 	display: inline;
 	color: orange
 }
@@ -33,13 +34,35 @@
 }
 
 .nav-col {
-	background-color: #4b97aa	
+	background-color: #4b97aa;
+	padding: 15px
+}
+
+.btn-primary {
+	margin: auto
+}
+
+.btn-warning {
+	background-color: #BFA581;
+	margin: auto
 }
 
 .img-rounded {
+	margin: auto;
+	margin-top: 30px;
 	border: solid;
 	border-color: purple;
 	border-width: 10px
+}
+
+.myitems-header {
+	margin: auto;
+	margin-top: 30px;
+	padding: auto;
+	background-color: #BADFE4;
+	border: dotted;
+	border-width: 3px;
+	border-color: orange
 }
 
 .myitem-link {

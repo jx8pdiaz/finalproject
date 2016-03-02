@@ -8,30 +8,42 @@
 	<% end %>
 </ul>
 
+<div class="container-fluid bg-grey">
+	<div class="row">
+		<div class="col-xs-4">
+		</div>
+		<div class="col-xs-4 form-col">
+			<i class="fa fa-cubes fa-5x item-header"></i>
+			<h1 class="item-header">Edit an Item</h1>
 
-<%= form_for [@profile, @item] do | f | %>
-<%= f.label :name %><br>
-<%= f.text_field :name %><br>
+			<%= form_for [@profile, @item] do | f | %>
+			<%= f.label :name %><br>
+			<%= f.text_field :name %><br>
 
-<%= f.label :description %><br>
-<%= f.text_field :description %><br>
+			<%= f.label :description %><br>
+			<%= f.text_field :description %><br>
 
-<%= f.label :itempicture %><br>
-<%= f.file_field :itempicture %><br>
+			<%= f.label :itempicture %><br>
+			<%= f.file_field :itempicture %><br>
 
-<%= f.check_box(:isForSale) %><br>
-<%= label_tag(:isForSale, "Item is for sale") %><br>
+			<%= f.check_box(:isForSale) %><br>
+			<%= label_tag(:isForSale, "Item is for sale") %><br>
 
-<%= f.label :item_type %><br>
-<%= f.select :item_type_id, options_from_collection_for_select(ItemType.all, 'id', 'kind') %><br>
+			<%= f.label :item_type %><br>
+			<%= f.select :item_type_id, options_from_collection_for_select(ItemType.all, 'id', 'kind') %><br>
 
-<%= f.label :audiofile %><br>
-<%= f.file_field :audiofile %><br>
+			<%= f.label :audiofile %><br>
+			<%= f.file_field :audiofile %><br>
 
-<%= f.label :videofile %><br>
-<%= f.file_field :videofile %><br>
+			<%= f.label :videofile %><br>
+			<%= f.file_field :videofile %><br>
 
-<%= f.label :price %><br>
-<%= f.number_field :price %><br>
-<%= f.submit %>
-<% end %>
+			<%= f.label :price %><br>
+			<%= f.number_field :price %><br>
+			<%= f.submit %>
+			<% end %>
+		</div>
+		<div class="col-xs-4">
+		</div>
+	</div>
+</div>

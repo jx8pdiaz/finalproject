@@ -6,6 +6,8 @@
 </head>
 <body>
 <div class="container-fluid">
+	<div class="row nav-bottom">
+	</div>
 	<div class="row">
 		<div class="col-xs-9">
 			<div class="row logo-row">
@@ -45,7 +47,7 @@
 			<br>
 			<%= link_to "Edit Profile", :edit_profile, class: "btn btn-xs btn-primary" %>
 			<%= link_to "Add New Item", :new_item, class: "btn btn-xs btn-warning" %>
-			<h3>MY ITEMS</h3>
+			<h3 class="myitems-header">MY ITEMS</h3>
 			<ul class="list-unstyled">
 				<% @my_items.each do |i| %>
 					<li>
@@ -53,7 +55,7 @@
 						<%= link_to i.name, item_path(i.id), class: "myitem-link" %>
 						<br>
 						<%= i.description %>
-						<%= i.item_type.kind %>
+						<strong><%= i.item_type.kind %></strong>
 					</li>
 				<% end %>
 			</ul>

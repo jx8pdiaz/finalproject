@@ -1,3 +1,42 @@
 // Place all the styles related to the items controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.bg-grey {
+	background-color: #6a9495;
+	height: 700px
+}
+
+.item-header {
+	color: orange;
+	display: inline
+}
+
+.form-col {
+	padding-top: 30px;
+	padding-bottom: 30px;
+	margin-top: 60px;
+	margin-bottom: 30px; 
+	background-color: #ddf9fd;
+	border: dotted;
+	border-color: orange;
+	border-width: 2px
+}
+
+.item-col {
+	padding-top: 30px;
+	padding-bottom: 30px;
+	margin-top: 60px;
+	margin-bottom: 30px; 
+	background-color: #ddf9fd
+}
+
+.comment-form {
+	margin-left: 30px
+}
+
+.tag-col {
+	background-color: #9d628b;
+	color: #BADFE4;
+	margin: auto
+}

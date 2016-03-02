@@ -48,6 +48,7 @@ class ItemsController < ApplicationController
 	end
 
 	def edit
+		@item = @profile.items.new
 	end
 
 	def update
