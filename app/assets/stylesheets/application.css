@@ -13,3 +13,9 @@
  *= require_tree .
  *= require_self
  */
+
+.nav-top {
+	background-color: #956a81;
+	height: 40px;
+	padding-bottom: 30px
+}

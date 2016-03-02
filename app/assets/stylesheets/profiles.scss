@@ -1,3 +1,48 @@
 // Place all the styles related to the profiles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.nav-bottom {
+	background-color: #7B395C;
+	height: 60px
+}
+.navname {
+	display: inline;
+	color: orange
+}
+
+.navloc {
+	display: inline;
+	color: orange
+}
+
+.item-view {
+	background-color: #ddf9fd;
+	padding-left: 30px
+}
+
+.logo-row {
+	background-color: #4b97aa;
+	padding-left: 25px;
+	padding-top: 30px;
+	padding-bottom: 7px
+}
+
+.logo {
+	width: 700px
+}
+
+.nav-col {
+	background-color: #4b97aa	
+}
+
+.img-rounded {
+	border: solid;
+	border-color: purple;
+	border-width: 10px
+}
+
+.myitem-link {
+	color: #BADFE4;
+	font-size: medium
+}

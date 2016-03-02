@@ -5,51 +5,60 @@
 	<title>Show</title>
 </head>
 <body>
-<div class="container fluid">
+<div class="container-fluid">
 	<div class="row">
 		<div class="col-xs-9">
-		<h4>NEARBY ITEMS</h4>
-		<ul class="list-unstyled">
-		<% @items.each do |i| %>
-			<li>
-				<%= link_to i.name, item_path(i.id) %><br>
-				<img src="<%= i.itempicture_url %>" style="width: 200px;"><br>
-				<%= i.description %>
-				<%= i.item_type.kind %>
-				</li>
-				<% end %>
-		</ul>
+			<div class="row logo-row">
+				<img src="/logo2.png" class="logo">
+			</div>
+			<div class="row item-view">
+				<h4>NEARBY ITEMS</h4>
+				<ul class="list-unstyled">
+					<% @items.each do |i| %>
+						<li>
+						<%= link_to i.name, item_path(i.id) %>
+						<br>
+						<img src="<%= i.itempicture_url %>" style="width: 200px;">
+						<br>
+						<%= i.description %>
+						<%= i.item_type.kind %>
+						</li>
+					<% end %>
+				</ul>
+			</div>
 		</div>
-		<div class="col-xs-3">
-		<img src="<%= @profile.profilepicture_url %>" style="width: 200px;">
-		<br>
-		<span><i class="fa fa-user"><h4><%= @profile.name %></h4></i></span> 
-		<h6><%= @profile.location %></h6>
-		<br>
-		<%= @profile.bio %>
-
-		<br>
-		<%= link_to "Edit Profile", :edit_profile, class: "btn btn-block btn-xs btn-primary" %>
-		<span class="glyphicon glyphicon-user"></span></a>
-		
-		<h3>MY ITEMS</h3>
-		<ul class="list-unstyled">
-		<% @my_items.each do |i| %>
-			<li>
-				<%= link_to i.name, item_path(i.id) %>
-				<br>
-
-				<%= i.description %>
-				<%= i.item_type.kind %>
-				</li>
+		<div class="col-xs-3 nav-col">
+			<img src="<%= @profile.profilepicture_url %>" style="width: 300px;" class="img-rounded">
+			<br>
+			<i class="fa fa-user navname">
+			<h4 class="navname">
+				<%= @profile.name %>
+			</h4>
+			</i>
+			<br>
+			<i class="fa fa-globe navloc"></i>
+			<h6 class="navloc">
+				<%= @profile.location %>
+			</h6>
+			<br>
+			<%= @profile.bio %>
+			<br>
+			<%= link_to "Edit Profile", :edit_profile, class: "btn btn-xs btn-primary" %>
+			<%= link_to "Add New Item", :new_item, class: "btn btn-xs btn-warning" %>
+			<h3>MY ITEMS</h3>
+			<ul class="list-unstyled">
+				<% @my_items.each do |i| %>
+					<li>
+						<i class="fa fa-cubes myitem-link"></i>
+						<%= link_to i.name, item_path(i.id), class: "myitem-link" %>
+						<br>
+						<%= i.description %>
+						<%= i.item_type.kind %>
+					</li>
 				<% end %>
-		</ul>
-		<%= link_to "New Item", :new_item, class: "btn btn-block btn-xs btn-warning" %>
+			</ul>
 		</div>		
 	</div>
 </div>
-	
-	
-	
 </body>
 </html>
