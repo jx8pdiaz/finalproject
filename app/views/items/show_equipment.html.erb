@@ -9,7 +9,7 @@
 		<div class="row">
 			<div class="col-sm-2">
 			</div>
-			<div class="col-sm-7 item-col">
+			<div class="col-sm-6 item-col">
 			<i class="fa fa-cubes fa-5x item-header"></i>
 			<h1 class="item-header"><%= @item.name %></h1>
 			<br>
@@ -18,7 +18,7 @@
 			<%= @item.isForSale %>
 			<%= @item.price %>
 			<br>
-			<img src="<%= @item.itempicture_url %>" alt="" style="width: 500px;" class="img-rounded">
+			<img src="<%= @item.itempicture_url %>" alt="" style="width: 600px;" class="img-rounded item-pic">
 			<br>
 			<% if current_user %>
 			<%= link_to "Edit Item", :edit_item, class: "btn btn-lg btn-info" %>
@@ -38,17 +38,22 @@
 				</ul>
 				<span class="comment-form">
 				<%= form_for [@item, @newcomment] do | comment |%>
-					<%= comment.label :body %><br>
-					<%= comment.text_field :body %><br>
 					<%= comment.label :subject %><br>
 					<%= comment.text_field :subject %><br>
+
+					<%= comment.label :body %><br>
+					<%= comment.text_field :body %><br>
+
 					<%= comment.submit %>
 				<% end %>
 				</span>
 				</div>
 			</div>
-		<div class="col-xs-3 tag-col">
-			<h4>Tags:</h4>
+			<div class="col-xs-1">
+			</div>
+			<div class="col-xs-2 tag-col">
+			<i class="fa fa-tags fa-2x tag-header"></i>
+			<h3 class="tag-header">Tags:</h4>
 			<ul>
 			<% @data_hash.each do |data| %>
 				<li>
@@ -57,13 +62,18 @@
 				</li>
 			<% end %>
 			</ul>
-			<%= form_for [@item, @tag] do | t |%>
-				<%= t.label :tag %>
-				<br>
-				<%= t.select :tag_type_id, options_from_collection_for_select(TagType.all, 'id', 'description') %>
-				<br>
-				<%= t.submit %>
-			<% end %>
+				<div class="row tag-form">
+					<i class="fa fa-tag fa-1x"></i>
+				<%= form_for [@item, @tag] do | t |%>
+					<%= t.label :tag %>
+					<br>
+					<%= t.select :tag_type_id, options_from_collection_for_select(TagType.all, 'id', 'description') %>
+					<br>
+					<%= t.submit %>
+				<% end %>
+				</div>
+			</div>
+			<div class="col-xs-1">
 			</div>
 		</div>
 	</div>	

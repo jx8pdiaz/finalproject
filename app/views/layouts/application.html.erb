@@ -8,12 +8,22 @@
 </head>
 <body>
 <% if current_user %>
-<ul class="list-inline nav-top">
-	<li><%= link_to "Sign Out", :destroy_user_session , :method => :delete %></li>
-	<li><%= link_to "Back", :back%></li>
-	<li><%= link_to "Profile", profile_path(current_user) %></li>
-</ul>
-<hr>
+	<div class="container-fluid nav-top">
+		<div class="row">
+			<div class="col-xs-2">
+				<ul class="list-inline">
+				<li><%= link_to "Sign Out", :destroy_user_session , :method => :delete %></li>
+				<li><%= link_to "Back", :back%></li>
+				<li><%= link_to "Profile", profile_path(current_user) %></li>
+				</ul>
+			</div>
+			<div class="col-xs-9">
+			</div>
+			<div class="col-xs-1">
+				<img src="/minilogo.png" class="minilogo">
+			</div>
+		</div>
+	</div>
 <% end %>
 <%= yield %>
 

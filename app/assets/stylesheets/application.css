@@ -15,7 +15,18 @@
  */
 
 .nav-top {
-	background-color: #956a81;
+	background-color: #183a25;
 	height: 40px;
 	padding-bottom: 30px
+}
+
+.minilogo {
+	float: right;
+	padding-top: 3px;
+	/*padding-left: 30px;*/
+	width: 40px;
+	/*display: inline;*/
+	/*position: absolute*/
+	/*margin: auto;*/
+
 }

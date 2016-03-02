@@ -38,11 +38,11 @@ Item.create!([
   {name: "NEW AUDIO STREAM", description: "", pic_url: "default", download_url: "default", isForSale: false, price: "0.0", item_type_id: 1, profile_id: 1, audiofile: nil, videofile: nil, itempicture: nil},
   {name: "jtrd", description: "", pic_url: "default", download_url: "default", isForSale: false, price: "0.0", item_type_id: 2, profile_id: 1, audiofile: nil, videofile: nil, itempicture: nil},
   {name: "VIDEO 1", description: "", pic_url: "default", download_url: "default", isForSale: false, price: "0.0", item_type_id: 2, profile_id: 1, audiofile: nil, videofile: nil, itempicture: nil},
-  {name: "Roland JX-8P", description: "Analog Synthesizer", pic_url: "default", download_url: "default", isForSale: false, price: "0.0", item_type_id: 1, profile_id: 1, audiofile: nil, videofile: nil, itempicture: "roland-jx-8p-368890.jpg"},
-  {name: "Roland JX-8P", description: "Analog Synthesizer", pic_url: "default", download_url: "default", isForSale: false, price: "0.0", item_type_id: 3, profile_id: 1, audiofile: nil, videofile: nil, itempicture: "jx8p.jpg"},
+  {name: "Roland JX-8P", description: "Analog Synthesizer", pic_url: "default", download_url: "default", isForSale: false, price: "0.0", item_type_id: 1, profile_id: 2, audiofile: nil, videofile: nil, itempicture: "roland-jx-8p-368890.jpg"},
+  {name: "Roland JX-8P", description: "Analog Synthesizer", pic_url: "default", download_url: "default", isForSale: false, price: "0.0", item_type_id: 3, profile_id: 2, audiofile: nil, videofile: nil, itempicture: "jx8p.jpg"},
   {name: "Korg Minilogue", description: "Analog Synthesizer", pic_url: "default", download_url: "default", isForSale: true, price: "600.0", item_type_id: 3, profile_id: 4, audiofile: nil, videofile: nil, itempicture: "miniloguepic.jpg"},
-  {name: "Elektron Analog Four", description: "Analog Synthesizer", pic_url: "default", download_url: "default", isForSale: false, price: "0.0", item_type_id: 3, profile_id: 3, audiofile: nil, videofile: nil, itempicture: "analogfour.jpg"},
-  {name: "ARP Odyssey", description: "Analog Synthesizer", pic_url: "default", download_url: "default", isForSale: true, price: "1000.0", item_type_id: 3, profile_id: 2, audiofile: nil, videofile: nil, itempicture: "arpodyssey.jpg"}
+  {name: "Elektron Analog Four", description: "Analog Synthesizer", pic_url: "default", download_url: "default", isForSale: false, price: "0.0", item_type_id: 4, profile_id: 3, audiofile: nil, videofile: nil, itempicture: "analogfour.jpg"},
+  {name: "ARP Odyssey", description: "Analog Synthesizer", pic_url: "default", download_url: "default", isForSale: true, price: "1000.0", item_type_id: 3, profile_id: 5, audiofile: nil, videofile: nil, itempicture: "arpodyssey.jpg"}
 ])
 ItemType.create!([
   {kind: "Audio"},
