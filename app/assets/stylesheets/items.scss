@@ -2,9 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+// .container-fluid {
+// 	background-color: #ddf9fd	
+// }
+
 .bg-grey {
-	background-color: #6a9495;
-	height: 700px
+	background-color: #6a9495
 }
 
 .item-header {
@@ -28,7 +31,10 @@
 	padding-bottom: 30px;
 	margin-top: 60px;
 	margin-bottom: 30px; 
-	background-color: #ddf9fd
+	background-color: #ddf9fd;
+	border: dotted;
+	border-color: orange;
+	border-width: 2px
 }
 
 .comment-form {

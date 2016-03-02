@@ -2,6 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.container-fluid.bg-aqua {
+	background-color: #4b97aa;
+
+}
 .nav-bottom {
 	background-color: #7B395C;
 	height: 60px
@@ -35,7 +39,10 @@
 
 .nav-col {
 	background-color: #4b97aa;
-	padding: 15px
+	padding: 15px;
+	// position: absolute;
+	// float: right;
+	// top: 15px
 }
 
 .btn-primary {
