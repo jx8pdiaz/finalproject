@@ -48,11 +48,13 @@ class ItemsController < ApplicationController
 	end
 
 	def edit
-		@item = @profile.items.new
+		@item = Item.find_by(id: params[:id])
 	end
 
 	def update
+		@item = Item.find_by(id: params[:id])
 		if @item.update_attributes(item_params)
+			redirect_to(profile_path(current_user)) 
 		else
 			render 'edit'
 		end
