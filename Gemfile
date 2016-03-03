@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'devise'
 gem 'fog'
 gem 'mini_magick'
+gem 'audiojs-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5.1'
 # Use postgresql as the database for Active Record
