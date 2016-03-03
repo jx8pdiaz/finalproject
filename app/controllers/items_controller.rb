@@ -63,7 +63,7 @@ class ItemsController < ApplicationController
 	def delete
 		Item.find(params[:id]).destroy
 		flash[:success] = "item destroyed"
-		redirect_to users_url
+		redirect_to profile_path(current_user.profile.id)
 	end
 
 
