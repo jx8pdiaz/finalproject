@@ -7,9 +7,9 @@
 <body>
 	<div class="container-fluid bg-grey">
 		<div class="row">
-			<div class="col-sm-2">
+			<div class="col-xs-2">
 			</div>
-			<div class="col-sm-6 item-col">
+			<div class="col-xs-6 item-col">
 			<i class="fa fa-cubes fa-5x item-header"></i>
 			<h1 class="item-header"><%= @item.name %></h1>
 			<br>
@@ -36,7 +36,7 @@
 					</li>
 				<% end %>
 				</ul>
-				<span class="comment-form">
+				<span class="row comment-form">
 				<%= form_for [@item, @newcomment] do | comment |%>
 					<%= comment.label :subject %><br>
 					<%= comment.text_field :subject %><br>

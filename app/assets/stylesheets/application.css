@@ -16,9 +16,9 @@
 
 .nav-top {
 	background-color: #124031;
-	height: 40px;
-	padding-top: 3px;
-	padding-bottom: 30px
+	/*height: 40px;*/
+	padding-top: 8px;
+	padding-bottom: 3px;
 }
 
 .minilogo {

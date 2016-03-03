@@ -2,20 +2,29 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Equipment</title>
+	<title>Video</title>
 </head>
 <body>
-	<div class="container">
-		<%= @item.name %>
-		<%= @item.description %>
-		<%= @item.isForSale %>
-		<%= @item.price %>
-		<br>
-		<img src="<%= @item.itempicture_url %>" alt="" style="width: 200px;">
-		<% if current_user %>
-		<%= link_to "Edit Item", :edit_item %>
-		<% end %>
-		<ul>
+	<div class="container-fluid bg-grey">
+		<div class="row">
+			<div class="col-xs-2">
+			</div>
+			<div class="col-xs-6 item-col">
+			<i class="fa fa-cubes fa-5x item-header"></i>
+			<h1 class="item-header"><%= @item.name %></h1>
+			<br>		
+			<%= @item.description %>
+			<br>
+			<a href="<%= @item.videofile_url %>">DOWNLOAD PATCH</a>
+			<br>
+			<img src="<%= @item.itempicture_url %>" alt="" style="width: 200px;">
+			<% if current_user %>
+			<%= link_to "Edit Item", :edit_item, class: "btn btn-lg btn-info" %>
+
+			<% end %>
+			<div class="row">
+			<h4> Comments: </h4>
+			<ul>
 			<% @comments.each do |c| %>
 				<li>
 				<% p c%>
@@ -25,31 +34,39 @@
 					Body: <%= c.body %>
 				</li>
 			<% end %>
-		</ul>
-		<div class="col-xs-6">
-			<%= form_for [@item, @newcomment] do | comment |%>
-				<%= comment.label :body %><br>
-				<%= comment.text_field :body %><br>
-				<%= comment.label :subject %><br>
-				<%= comment.text_field :subject %><br>
-				<%= comment.submit %>
-			<% end %>
+			</ul>
+				<div class="row comment-form">
+				<%= form_for [@item, @newcomment] do | comment |%>
+					<%= comment.label :body %><br>
+					<%= comment.text_field :body %><br>
+					<%= comment.label :subject %><br>
+					<%= comment.text_field :subject %><br>
+					<%= comment.submit %>
+				<% end %>
+				</div>
+			</div>
 		</div>
-		<div class="col-xs-6">
-		<ul>
+		<div class="col-xs-1">
+		</div>
+		<div class="col-xs-2 tag-col">
+			<h4>Tags:</h4>
+			<ul>
 			<% @data_hash.each do |data| %>
 				<li>
 					Tag Type <%= data[1][:name] %><br>
 					Tag Count <%= data[1][:count] %>
 				</li>
 			<% end %>
-		</ul>
+			</ul>
 			<%= form_for [@item, @tag] do | comment |%>
 				<%= comment.label :tag %><br>
 				<%= comment.select :tag_type_id, options_from_collection_for_select(TagType.all, 'id', 'description') %><br>
 				<%= comment.submit %>
 			<% end %>
-		</div>
-	</div>	
+			</div>
+			<div class="col-xs-1">
+			</div>
+		</div>	
+	</div>
 </body>
 </html>
