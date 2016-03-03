@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Video</title>
+	<title>Patch</title>
 </head>
 <body>
 	<div class="container-fluid bg-grey">
@@ -15,7 +15,7 @@
 			<br>		
 			<%= @item.description %>
 			<br>
-			<a href="<%= @item.videofile_url %>">DOWNLOAD PATCH</a>
+			<a href="<%= @item.patchfile_url %>">DOWNLOAD PATCH</a>
 			<br>
 			<img src="<%= @item.itempicture_url %>" alt="" style="width: 200px;">
 			<% if current_user %>

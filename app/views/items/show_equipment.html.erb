@@ -36,7 +36,7 @@
 					</li>
 				<% end %>
 				</ul>
-				<span class="row comment-form">
+				<div class="row comment-form">
 				<%= form_for [@item, @newcomment] do | comment |%>
 					<%= comment.label :subject %><br>
 					<%= comment.text_field :subject %><br>
@@ -46,7 +46,7 @@
 
 					<%= comment.submit %>
 				<% end %>
-				</span>
+				</div>
 				</div>
 			</div>
 			<div class="col-xs-1">
