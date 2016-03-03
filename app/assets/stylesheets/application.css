@@ -15,18 +15,30 @@
  */
 
 .nav-top {
-	background-color: #183a25;
+	background-color: #124031;
 	height: 40px;
+	padding-top: 3px;
 	padding-bottom: 30px
 }
 
 .minilogo {
 	float: right;
-	padding-top: 3px;
+	/*padding-top: 3px;*/
 	/*padding-left: 30px;*/
 	width: 40px;
 	/*display: inline;*/
 	/*position: absolute*/
 	/*margin: auto;*/
+}
 
+.btn-signout {
+	background-color: #788784
+}
+
+.btn-back {
+	background-color: #38c765
+}
+
+.btn-prof {
+	background-color: #4676b9
 }

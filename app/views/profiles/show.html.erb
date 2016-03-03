@@ -14,11 +14,12 @@
 				<img src="/logo2.png" class="logo">
 			</div>
 			<div class="row item-view">
-				<h4>NEARBY ITEMS</h4>
+				<h3>NEARBY ITEMS</h3>
 				<ul class="list-unstyled">
 					<% @items.each do |i| %>
 						<li>
-						<%= link_to i.name, item_path(i.id) %>
+						<i class="fa fa-cubes nearitem-link"></i>
+						<%= link_to i.name, item_path(i.id), class: "nearitem-link" %>
 						<br>
 						<img src="<%= i.itempicture_url %>" style="width: 200px;">
 						<br>

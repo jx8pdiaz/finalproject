@@ -53,7 +53,7 @@
 			</div>
 			<div class="col-xs-2 tag-col">
 			<i class="fa fa-tags fa-2x tag-header"></i>
-			<h3 class="tag-header">Tags:</h4>
+			<h3 class="tag-header">Tags:</h3>
 			<ul>
 			<% @data_hash.each do |data| %>
 				<li>
@@ -64,13 +64,13 @@
 			</ul>
 				<div class="row tag-form">
 					<i class="fa fa-tag fa-1x"></i>
-				<%= form_for [@item, @tag] do | t |%>
+					<%= form_for [@item, @tag] do | t |%>
 					<%= t.label :tag %>
 					<br>
 					<%= t.select :tag_type_id, options_from_collection_for_select(TagType.all, 'id', 'description') %>
 					<br>
 					<%= t.submit %>
-				<% end %>
+					<% end %>
 				</div>
 			</div>
 			<div class="col-xs-1">
