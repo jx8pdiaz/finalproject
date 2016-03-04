@@ -56,10 +56,12 @@
 			<h3 class="tag-header">Tags:</h3>
 			<ul>
 			<% @data_hash.each do |data| %>
+				<% if @data_hash.count != 0 %>
 				<li>
 					Tag Type <%= data[1][:name] %><br>
 					Tag Count <%= data[1][:count] %>
 				</li>
+				<% end %>
 			<% end %>
 			</ul>
 				<div class="row tag-form">
