@@ -15,7 +15,7 @@
 			<br>		
 			<%= @item.description %>
 			<br>
-			<video src="<%= @item.videofile_url %>"></video>
+			<a href="<%= @item.videofile_url %>">WATCH HERE</a>
 			<br>
 			<img src="<%= @item.itempicture_url %>" alt="" style="width: 200px;">
 			<% if current_user %>
@@ -49,7 +49,8 @@
 		<div class="col-xs-1">
 		</div>
 		<div class="col-xs-2 tag-col">
-			<h4>Tags:</h4>
+			<i class="fa fa-tags fa-2x tag-header"></i>
+			<h3 class="tag-header">Tags:</h3>
 			<ul>
 			<% @data_hash.each do |data| %>
 				<li>
@@ -58,11 +59,13 @@
 				</li>
 			<% end %>
 			</ul>
+			<div class="row tag-form">
 			<%= form_for [@item, @tag] do | comment |%>
 				<%= comment.label :tag %><br>
 				<%= comment.select :tag_type_id, options_from_collection_for_select(TagType.all, 'id', 'description') %><br>
 				<%= comment.submit %>
 			<% end %>
+			</div>
 			</div>
 			<div class="col-xs-1">
 			</div>
